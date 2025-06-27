@@ -41,14 +41,22 @@ fn main() {
         let mut ele1 = 0;
         let mut ele2 = 0;
 
-        match mid1 {
-            Some(num) => ele1 = *num , // have to derefence , num is in `&i32` form
-            None => (), // as we are pretty sure we will get it , I just wanted to practice match statement
+        // match mid1 {
+        //     Some(num) => ele1 = *num , // have to derefence , num is in `&i32` form
+        //     None => (), // as we are pretty sure we will get it , I just wanted to practice match statement
+        // }
+
+        // match mid2 {
+        //     Some(num) => ele2 = *num , 
+        //     None => (), // as we are pretty sure we will get it , I just wanted to practice match statement
+        // }
+
+        if let Some(num) = mid1 {
+            ele1 = *num;
         }
 
-        match mid2 {
-            Some(num) => ele2 = *num , 
-            None => (), // as we are pretty sure we will get it , I just wanted to practice match statement
+        if let Some(num) = mid2 {
+            ele2 = *num;
         }
 
         println!("{is_even} , {ele1} , {ele2}");

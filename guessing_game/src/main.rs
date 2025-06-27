@@ -23,7 +23,11 @@ fn main(){
             .read_line(&mut guess)
             .expect("Failed to read the input");
 
-        println!("You have guessed {}" , guess);
+            println!("You have guessed {}" , guess);
+        
+            
+        // e have to convert guess from string to numerical type
+
 
         // the following is also right , but we cannot perform input validation :
         // let guess: u32 = guess
@@ -31,7 +35,7 @@ fn main(){
         //                     .parse() // converts to any data type we want , specified by `: u32` on left
         //                     .expect("Failed to convert the guess to a number!"); // parse returns a `Result` struct
 
-        // The better way:(note : can over-write variables , useful during type conversion)
+        // The better way:(note : we can over-write variables , useful during type conversion)
         let guess: u32 = match guess // e MATCH is very imp ❗️
                             .trim() // trims all the empty space from the string(like `/n` in end)
                             .parse() { // parse converts to any data type we want , specified by `: u32` on left
@@ -42,7 +46,6 @@ fn main(){
                                 }
                             };
 
-        // e have to convert guess from string to numerical type
 
         match guess.cmp(&secret_number){
             Ordering::Less => println!("Too small!"),

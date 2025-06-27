@@ -21,7 +21,7 @@ fn without_slicing(str : &String) -> usize{
         }
     }
 
-    str.len()
+    str.len() // e this will be returned if the loop runs fully w/o returning
 
     // problem , if I clear out the original string , then this returned index is of no use to me
 }

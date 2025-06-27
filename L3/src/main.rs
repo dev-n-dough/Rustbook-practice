@@ -40,7 +40,7 @@ fn function_returns_value(mut x: i32) -> i32{
 fn if_statement(){
     let x = 5;
 
-    let y = if x < 7 {x+2} else {x};
+    let y = if x < 7 {x+2} else {x}; // e no brackets needed around `x+7`
 
     println!("Value of y is {y}");
 }
@@ -61,6 +61,7 @@ fn loops(){
 
 fn labeled_loops(){
     let mut x = 0;
+    // break and continue apply to the innermost loop. but we can label the loops, and call break and continue on them.
 
     'outer_loop: loop{ // e ` 'outer_loop ` is the label , and the colon is necessary
         println!("x is {x}");
